@@ -74,22 +74,6 @@ public class Main {
         }
     }
 
-    public static void ex03() {
-
-        int a = 1, b = 1, proximo;
-        int numero = lerInteiro("Digite um numero inteiro: ");
-
-        System.out.println("Sequencia de Fibonacci ate " + numero + ":");
-
-        for (; a <= numero; ) {
-            System.out.println(a);
-
-            proximo = a + b;
-            a = b;
-            b = proximo;
-        }
-    }
-
     /* 
 
     public static void ex03() {
