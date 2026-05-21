@@ -91,18 +91,20 @@ public class Main {
     }
 
     /* 
-    
+
     public static void ex03() {
 
         int numero = lerInteiro("Digite um numero inteiro: ");
 
         System.out.println("Sequencia de Fibonacci ate " + numero + ":");
 
-        for (int a = 1, b = 1, proximo; a <= numero; ) {
+        int a = 1;
+        int b = 1;
 
+        while (a <= numero) {
             System.out.println(a);
-
-            proximo = a + b;
+            
+            int proximo = a + b;
             a = b;
             b = proximo;
         }
