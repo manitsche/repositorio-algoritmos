@@ -112,10 +112,10 @@ public class Main {
 
             if (vetor[i] % 2 == 0) {
                 pares[npares] = vetor[i];
-                npares++;
+                npares = npares + 1;
             } else {
                 impares[nimpares] = vetor[i];
-                nimpares++;
+                nimpares = nimpares + 1;
             }
         }    
     }
