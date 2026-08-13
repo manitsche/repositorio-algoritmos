@@ -6,7 +6,6 @@ public class Main {
 
     public static int[] alocarInteiros(int tamanho) {
         int[] vetor = new int[tamanho];
-        System.out.println();
         for (int i = 0; i < tamanho; i++) {
             int valor = 0;
             vetor[i] = valor;
