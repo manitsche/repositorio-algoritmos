@@ -10,7 +10,14 @@ public class Main {
 
     public static boolean[] negar(boolean[] vetor) {
         // TODO: implemente a negação do vetor aqui
-        return null;
+
+        boolean[] resultado = new boolean[vetor.length];
+
+        for (int i = 0; i < vetor.length; i++) {
+            resultado[i] = !vetor[i];
+        }
+
+        return resultado;
     }
 
     public static void mostrarVetor(boolean[] vetor) {

@@ -11,6 +11,18 @@ public class Main {
     public static String substituir(String s, char antigo, char novo) {
         // TODO: implemente a substituição de caracteres aqui
         // return null;
+
+        String resultado = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == antigo) {
+                resultado += novo;
+            } else {
+                resultado += s.charAt(i);
+            }
+        }
+
+        return resultado;
     }
 
     public static void main(String[] args) {
