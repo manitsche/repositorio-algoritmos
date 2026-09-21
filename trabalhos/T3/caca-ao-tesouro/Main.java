@@ -48,7 +48,7 @@ public class Main {
 
                 mapa[linhaAtual][colunaAtual].foiVisitada = true;
 
-                System.out.println("(" + linhaAtual + "," + colunaAtual + ")");
+                System.out.println(linhaAtual + "," + colunaAtual);
 
                 // Percorreu a primeira vez, não repetiu, vai para a próxima posição
                 int novaLinha = mapa[linhaAtual][colunaAtual].proximaLinha;
@@ -58,9 +58,9 @@ public class Main {
             }
 
             // Mostrou todas em que só percorreu uma vez, agora mostra a que repetiu
-            System.out.println("(" + linhaAtual + "," + colunaAtual + ")");
+            System.out.println(linhaAtual + "," + colunaAtual);
 
-            System.out.println("O tesouro esta nas coordenadas (" + linhaAtual + "," + colunaAtual + ")");
+            System.out.println("O tesouro esta nas coordenadas " + linhaAtual + "," + colunaAtual);
 
             leitor.close();
 
