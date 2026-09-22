@@ -50,13 +50,21 @@ public class Main {
                     pixel.corAzul = valorPixel;
 
                     imagem.pixelsDaImagem[l][c] = pixel
+
+                    // escrita do novo arquivo
+                    BufferedWriter escritor = new BufferedWriter(new FileWriter("testePGM_saida.pgm"));
+                    escritor.write("P2");
+                    escritor.nextLine();
+                    escritor.write(larguraImagem + " " + alturaImagem);
+                    escitor.nextLine();
+                    escritor.write("255");
+                    escritor.nextLine();
                 }
             }
 
             leitor.close();
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e);
-
         }    
     }
 }
