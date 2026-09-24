@@ -48,7 +48,12 @@ public class Main {
 
                 mapa[linhaAtual][colunaAtual].foiVisitada = true;
 
-                System.out.println(linhaAtual + "," + colunaAtual);
+                // System.out.println(linhaAtual + "," + colunaAtual);
+
+                // Teste
+                System.out.println("Posicao: (" + linhaAtual + "," + colunaAtual + ")" +
+                    " -> Conteudo (" + mapa[linhaAtual][colunaAtual].proximaLinha + "," +
+                    mapa[linhaAtual][colunaAtual].proximaColuna + ")");
 
                 // Percorreu a primeira vez, não repetiu, vai para a próxima posição
                 int novaLinha = mapa[linhaAtual][colunaAtual].proximaLinha;
