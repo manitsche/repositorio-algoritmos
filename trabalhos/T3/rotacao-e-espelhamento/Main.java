@@ -104,18 +104,11 @@ public class Main {
             switch (opcao) {
                 case 1:
                     rotacionar90(imagem);
-                    
-                    if (imagem.formato.equals("P1")) {
-                        salvarImagem(imagem, nomeImagem + "_rotacao.pbm");
-                    } else if (imagem.formato.equals("P2")) {
-                        salvarImagem(imagem, nomeImagem + "_rotacao.pgm");
-                    } else if (imagem.formato.equals("P3")) {
-                        salvarImagem(imagem, nomeImagem + "_rotacao.ppm");
-                    }
-
+                    definirNomenclaturaDoArquivo(imagem, nomeImagem, "rotacao");
                     break;
                 case 2:
-                    System.out.println("Espelhamento horizontal escolhido.");
+                    espelharHorizontal(imagem);
+                    definirNomenclaturaDoArquivo(imagem, nomeImagem, "horizontal");
                     break;
                 case 3:
                     System.out.println("Espelhamento vertical escolhido.");
@@ -129,23 +122,6 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e);
         }
-    }
-
-    public static void rotacionar90(Imagem imagem) {
-
-        Pixel[][] novaMatriz = new Pixel[imagem.largura][imagem.altura];
-
-        for (int l = 0; l < imagem.altura; l++) {
-            for (int c = 0; c < imagem.largura; c++) {
-                novaMatriz[c][imagem.altura - 1 - l] = imagem.pixelsDaImagem[l][c];
-            }
-        }
-
-        imagem.pixelsDaImagem = novaMatriz;
-
-        int larguraAntiga = imagem.largura;
-        imagem.largura = imagem.altura;
-        imagem.altura = larguraAntiga;
     }
 
     public static void salvarImagem(Imagem imagem, String nomeArquivo) {
@@ -179,9 +155,56 @@ public class Main {
             }
 
             escritor.close();
+            System.out.println("Arquivo criado com sucesso: " + nomeArquivo);
 
         } catch (IOException e) {
             System.out.println("Erro ao salvar o arquivo: " + e);
         }
     }
+
+    public static void definirNomenclaturaDoArquivo(Imagem imagem, String nomeImagem, String operacao) {
+        
+        if (imagem.formato.equals("P1")) {
+            salvarImagem(imagem, nomeImagem + "_" + operacao + ".pbm");
+        } else if (imagem.formato.equals("P2")) {
+            salvarImagem(imagem, nomeImagem + "_" + operacao + ".pgm");
+        } else {
+            salvarImagem(imagem, nomeImagem + "_" + operacao + ".ppm");
+        }
+    }
+
+    public static void rotacionar90(Imagem imagem) {
+
+        Pixel[][] novaMatriz = new Pixel[imagem.largura][imagem.altura];
+
+        for (int l = 0; l < imagem.altura; l++) {
+            for (int c = 0; c < imagem.largura; c++) {
+                novaMatriz[c][imagem.altura - 1 - l] = imagem.pixelsDaImagem[l][c];
+            }
+        }
+
+        imagem.pixelsDaImagem = novaMatriz;
+
+        int larguraAntiga = imagem.largura;
+        imagem.largura = imagem.altura;
+        imagem.altura = larguraAntiga;
+    }
+
+    public static void espelharHorizontal(Imagem imagem) {
+
+        Pixel[][] novaMatriz = new Pixel[imagem.altura][imagem.largura];
+
+        for (int l = 0; l < imagem.altura; l++) {
+            for (int c = 0; c < imagem.largura; c++) {
+
+                // Largura - 1 = ultimo indice
+                // Pega o ultimo indice e subtrai a coluna atual para inverter a posicao.
+                // Assim, sabemos para qual coluna o pixel deve ir na matriz espelhada. 
+
+                novaMatriz[l][imagem.largura - 1 - c] = imagem.pixelsDaImagem[l][c];
+            }
+        }
+
+        imagem.pixelsDaImagem = novaMatriz;
+    }   
 }
