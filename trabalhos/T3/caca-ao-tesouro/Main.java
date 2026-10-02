@@ -66,7 +66,6 @@ public class Main {
             leitor.close();
 
             /*
-
             A outra interpretaçao do enunciado é que o tesouro está na proxima posição a partir
             da primeira coordenada que se repete. Neste caso, deve-se fazer:
             
@@ -74,7 +73,6 @@ public class Main {
             int colunaTesouro = mapa[linhaAtual][colunaAtual].proximaColuna;
             
             System.out.println("O tesouro esta nas coordenadas " + linhaTesouro + "," + colunaTesouro);
-
             */
            
         } catch (IOException e) {
