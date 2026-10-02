@@ -58,13 +58,25 @@ public class Main {
             }
 
             // Mostrou todas em que só percorreu uma vez, agora mostra a que repetiu
-            int linhaTesouro = mapa[linhaAtual][colunaAtual].proximaLinha;
-            int colunaTesouro = mapa[linhaAtual][colunaAtual].proximaColuna;
+            System.out.println(linhaAtual + "," + colunaAtual);
 
+            
             System.out.println("O tesouro esta nas coordenadas " + linhaAtual + "," + colunaAtual);
 
             leitor.close();
 
+            /*
+
+            A outra interpretaçao do enunciado é que o tesouro está na proxima posição a partir
+            da primeira coordenada que se repete. Neste caso, deve-se fazer:
+            
+            int linhaTesouro = mapa[linhaAtual][colunaAtual].proximaLinha;
+            int colunaTesouro = mapa[linhaAtual][colunaAtual].proximaColuna;
+            
+            System.out.println("O tesouro esta nas coordenadas " + linhaTesouro + "," + colunaTesouro);
+
+            */
+           
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
