@@ -50,6 +50,13 @@ public class Main2 {
         lista.remove(indice);
     }
 
+    public static void removerNomePassandoONome(LinkedList<String> lista, String nome) {
+        int indice = lista.indexOf(nome);
+        if (indice != -1) {
+            lista.remove(indice);
+        }
+    }
+
     public static void consultarLista(LinkedList<String> lista) {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(i + " - " + lista.get(i));
