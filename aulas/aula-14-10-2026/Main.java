@@ -56,7 +56,7 @@ public class Main {
 
         mostrarLista(lista);
 
-        System.out.println("Lista depois de adicionar novos nós (com função):");
+        // Lista depois de adicionar novos nós (com função)
 
         adicinarNaLista(lista, 32);
         adicinarNaLista(lista, 50);
