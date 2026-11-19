@@ -149,56 +149,55 @@ Como 1 é menor que 3, copiamos o valor para o vetor resultado:
 
 Atualizamos os índices:
 
+```
 i = 0
 j = 1
 k = 1
-
+```
 
 2. Segunda comparação
 
 Comparamos novamente:
 
-text
+```
 va[i] = 3
 vb[j] = 4
-
+```
 
 Como 3 é menor que 4, copiamos 3:
 
-text
+```
 vr = [1, 3, 0, 0]
-
+```
 
 Atualizamos:
 
-text
+```
 i = 1
 j = 1
 k = 2
-
+```
 
 3. Terceira comparação
 
 Agora comparamos:
 
-text
+```
 va[i] = 5
 vb[j] = 4
-
+```
 
 Como 4 é menor que 5, copiamos 4:
 
-text
-vr = [1, 3, 4, 0]
-
+`vr = [1, 3, 4, 0]`
 
 Atualizamos:
 
-text
+```
 i = 1
 j = 2
 k = 3
-
+```
 
 4. Cópia dos elementos restantes
 
@@ -222,23 +221,21 @@ Para isso, utilizamos a variável meio, que representa a posição onde começa 
 
 Considere o vetor:
 
-[5, 3, 4, 1, 2]
+`[5, 3, 4, 1, 2]`
 
 Primeiro, calculamos o meio:
 
-text
+```
 meio = 5 / 2
 meio = 2
-
+```
 
 Agora dividimos o vetor:
 
-text
-Vetor original: [5, 3, 4, 1, 2]
+Vetor original: `[5, 3, 4, 1, 2]`
 
 Esquerda: [5, 3]
 Direita:  [4, 1, 2]
-
 
 O vetor da esquerda recebe os elementos das posições 0 até meio - 1, enquanto o vetor da direita recebe os elementos da posição meio até a última posição.
 
@@ -308,8 +305,6 @@ Considere o vetor:
 
 `[5, 3, 4, 1, 2]`
 
-1. Passo = 1
-
 Intercalamos grupos de um elemento:
 
 ```
@@ -318,8 +313,6 @@ Intercalamos grupos de um elemento:
 [3, 5] [1, 4] [2]
 ```
 
-2. Passo = 2
-
 Agora intercalamos grupos de dois elementos:
 
 ```
@@ -327,8 +320,6 @@ Agora intercalamos grupos de dois elementos:
 
 [1, 3, 4, 5] [2]
 ```
-
-3. Passo = 4
 
 Agora intercalamos os grupos de quatro e um elemento:
 
